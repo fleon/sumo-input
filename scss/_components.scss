@@ -1,0 +1,115 @@
+
+.dialog {
+	background: $color-grey;
+	padding: $base-spacing-unit;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	border: 1px white solid;
+	box-shadow: 0px 0px 10px $color-grey-dark;
+}
+
+.dialog__title {
+	font-size: 30px;
+	font-weight: 100;
+	color: $color-blue;
+}
+
+.dialog__btn-close {
+	font-size: 40px;
+	color: $color-grey-dark;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+
+	float: right;
+	background: none;
+	border: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.sumo-input {
+	@extend %animate;
+
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQoNCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNzc3Nzc3IiBkPSJNMjU2LDM1Mkw5NiwxOTguNDA2TDE0MS43MTksMTYwTDI1NiwyNzUuMTg4TDM3MC4yODEsMTYwTDQxNiwxOTguNDA2TDI1NiwzNTJ6Ii8+DQo8L3N2Zz4=');
+	background-color: $color-grey-dark;
+	background-size: 5%;
+	background-repeat: no-repeat;
+	background-position: 98% center;
+	border: none;
+
+	padding: $half-spacing-unit;
+	border-radius: $base-border-radius;
+	border: 1px $color-grey-dark solid;
+
+	&:hover, &:focus {
+		border-color: $color-blue;
+	}
+
+	&:focus {
+		outline: none;
+		background-color: white;
+	}
+
+	&:before {
+		content: '';
+	}
+}
+
+.btn {
+	cursor: pointer;
+	background: $color-grey-dark;
+	width: 100px;
+	padding: $half-spacing-unit $base-spacing-unit;
+	border: none;
+	border-radius: $base-border-radius;
+}
+
+.btn-primary {
+	background: $color-blue;
+	color: white;
+}
+
+input[type="checkbox"] {
+	width: 14px;
+	height: 14px;
+}
+
+ul.dropdown {
+	z-index: 1;
+	width: 100%;
+	list-style: none;
+	position: absolute;
+	border-bottom-left-radius: $base-border-radius;
+	border-bottom-right-radius: $base-border-radius;
+	background: white;
+	box-shadow: 0px 0px 5px darken($color-grey-dark, 20%);
+
+	&, > li {
+		margin: 0;
+		padding: 0;
+	}
+
+	> li {
+		@extend %animate;
+
+		cursor: pointer;
+		padding: $half-spacing-unit $base-spacing-unit;
+
+		&.hovered {
+			background: $color-blue;
+			color: white;
+		}
+
+		&:last-of-type {
+			border-bottom-left-radius: $base-border-radius;
+			border-bottom-right-radius: $base-border-radius;
+		}
+	}
+}

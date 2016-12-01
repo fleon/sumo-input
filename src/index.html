@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="sumo">
+<head>
+	<title>Sumo Dialog</title>
+	<script src="../bower_components/angular/angular.js"></script>
+	<script src="app.js"></script>
+	<script src="directives/sumo-input.js"></script>
+	<link rel="stylesheet" href="main.css"/>
+</head>
+<body ng-controller="AppController">
+	<div class="container">
+		<form class="dialog" name="dialog" novalidate ng-submit="submitForm();">
+			<a class="dialog__btn-close" ng-click="cancel();">&times;</a>
+			<div class="dialog__title soft-bottom">Select an Employee</div>
+			<div class="push-ends">
+				<label>
+					<input type="checkbox" ng-model="sendWelcomeEmail">
+					Send welcome email to employee
+				</label>
+			</div>
+			<div class="push-ends">
+				<label>
+					<strong>Select a Team in the Organization</strong>
+					<div class="relative">
+						<input sumo-input class="push-half-top sumo-input full-width" type="text" ng-model="selectedTeam" options="teams" error-key="invalidTeam">
+					</div>
+					<span class="error" ng-show="dialog.$error.invalidTeam">Please select a valid team!</span>
+				</label>
+			</div>
+			<div class="push-ends">
+				<label>
+					<strong>Select an Employee</strong>
+					<div class="relative">
+						<input sumo-input class="push-half-top sumo-input full-width" type="text" ng-model="selectedEmployee" options="employeesInTeam(selectedTeam)" error-key="invalidEmployee">
+					</div>
+					<span class="error" ng-show="dialog.$error.invalidEmployee">Please select a valid employee!</span>
+				</label>
+			</div>
+
+			<div class="push-ends cf">
+				<input type="submit" value="OK" class="btn btn-primary float-right push-half-left">
+				<input type="button" value="Cancel" class="btn float-right" ng-click="cancel()">
+			</div>
+		</form>
+	</div>
+</body>

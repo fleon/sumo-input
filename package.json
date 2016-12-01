@@ -1,0 +1,15 @@
+{
+  "name": "sumo-input",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass scss/main.scss src/main.css",
+    "watch": "watch npm\\ run\\ sass scss"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^3.13.0"
+  }
+}

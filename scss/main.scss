@@ -1,0 +1,59 @@
+@import 'variables';
+@import 'spacing';
+@import 'components';
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body, input, button {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: $base-spacing-unit;
+	color: #56555D;
+}
+
+label {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.float-right {
+	float: right;
+}
+
+.cf:after, %cf:after {
+	clear: both;
+	content: '';
+	display: table;
+}
+
+.error {
+	color: darken(red, 5%);
+	font-size: 12px;
+	margin-top: $quarter-spacing-unit;
+}
+
+.animate, %animate {
+	transition: 0.15s;
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
